@@ -1,4 +1,4 @@
-path = 'C:\Users\rashi\eln1-project-2020-rs-team\data\ConductiveProbe\';
+path = '..\data\ConductiveProbe\';
 freq = [];
 V1=[];
 V2=[];
@@ -19,12 +19,12 @@ R1 = 10e3;
 w = freq*2*pi;
 
 
-Rpr=  (R1*A.*sqrt(1+(tan(argH)).^2))./(1- A.*sqrt(1+(tan(argH)).^2));
-Cpr= (tan(argH).*(R1+Rpr))./(w*R1.*Rpr);
+Rpr=  (R1*A.*sqrt(1+(tan(argH)).^2))./(1- (A.*sqrt(1+(tan(argH)).^2)));
+Cpr= -1*(tan(argH).*(R1+Rpr))./(w*R1.*Rpr);
 
 figure (1);
-semilogx(freq,20*log10(abs(Rpr)));
+semilogx(freq,Rpr);
 legend('k0','k1','k2','k3','k4');
 figure (2);
-semilogx(freq,20*log10(abs(Cpr)));
+semilogx(freq,Cpr);
 legend('k0','k1','k2','k3','k4');

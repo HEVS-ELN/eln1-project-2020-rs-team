@@ -1,23 +1,55 @@
 Circuit: * C:\Users\rashi\eln1-project-2020-rs-team\LTspice\Test-RprCpr.asc
 
-WARNING: Less than two connections to node VCC.  This node is used by V2.
-WARNING: Less than two connections to node VEE.  This node is used by V3.
-Direct Newton iteration for .op point succeeded.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 0.995033
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 0.999816
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
 
-Date: Thu Apr 02 13:03:28 2020
-Total elapsed time: 1.241 seconds.
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+vernier = 0.25
+Source Step = 0.0177557%
+Starting source stepping with srcstepmethod=1
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source Step = 100%
+Source Step = 100%
+Source Step = 100%
+Source Step = 100%
+Source stepping succeeded in finding the operating point.
+
+
+Date: Thu Apr 09 09:20:53 2020
+Total elapsed time: 2.652 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 50797
-traniter = 50794
-tranpoints = 25398
-accept = 24428
-rejected = 970
-matrix size = 49
-fillins = 0
+totiter = 252605
+traniter = 247489
+tranpoints = 123195
+accept = 120340
+rejected = 2855
+matrix size = 25
+fillins = 2
 solver = Normal
-Matrix Compiler1: 1018 bytes object code size  0.3/0.2/[0.1]
-Matrix Compiler2: 2.64 KB object code size  0.3/0.5/[0.2]
+Matrix Compiler1: 916 bytes object code size  0.3/0.1/[0.1]
+Matrix Compiler2: 1.90 KB object code size  0.4/0.4/[0.2]
 

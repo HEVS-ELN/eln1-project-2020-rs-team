@@ -1,3 +1,5 @@
+close all;
+clear;
 path = '..\data\ConductiveProbe\';
 freq = [];
 V1=[];
@@ -27,20 +29,15 @@ RInit=  (R1*A.*sqrt(1+(tan(argH)).^2))./(1- (A.*sqrt(1+(tan(argH)).^2)));
 Rpr = (Rscope*RInit)./(Rscope-RInit);
 Cpr= -1*(tan(argH).*(R1+Rpr))./(w*R1.*Rpr)-Cscope;
 
-% ================= RPR AND CPR PLOTS ================= 
-figure (1);
-loglog(freq,Rpr);
-legend('k0','k1','k2','k3','k4');
-title('Rpr');
-xlabel('frequency [Hz]');
-ylabel('resistance [Ohms]');
-figure (2);
-loglog(freq,Cpr);
-legend('k0','k1','k2','k3','k4');
-title('Cpr');
-xlabel('frequency [Hz]');
-ylabel('capacitance [F]');
+path1 = '..\data\';
+fileRC = [path1 'Test-RprCpr.txt'];
+opts = delimitedTextImportOptions('DataLines', 2,'VariableTypes','double','Delimiter','\t');
+dataRC = readmatrix(fileRC,opts);
 
-
-
-
+time = dataRC(:,1);
+Vpulse = dataRC(:,2);
+V01 = dataRC(:,3);
+V02 = dataRC(:,4);
+V03 = dataRC(:,5);
+V04 = dataRC(:,6);
+V05 = dataRC(:,7);

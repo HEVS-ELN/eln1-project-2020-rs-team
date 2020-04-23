@@ -1,18 +1,7 @@
-% ================= Read LTspice sim ================= 
-path1 = '..\data\';
-fileRC = [path1 'Test-RprCpr.txt'];
-opts = delimitedTextImportOptions('DataLines', 2,'VariableTypes','double','Delimiter','\t');
-dataRC = readmatrix(fileRC,opts);
 
-time = dataRC(:,1);
-Vpulse = dataRC(:,2);
-V01 = dataRC(:,3);
-V02 = dataRC(:,4);
-V03 = dataRC(:,5);
-V04 = dataRC(:,6);
-V05 = dataRC(:,7);
-
-figure (3);
+figure;
+tiledlayout(3,1);
+nexttile;
 plot(time,[Vpulse V01 V02 V03 V04 V05]);
 legend('Vpulse','V01','V02','V03','V04','V05');
 title('Simulation Plot');
@@ -52,9 +41,8 @@ V2dig=int16((2^15)*(V2/Vmax)+randn(OutputSmpls,1)*(2^NoiseBits));
 V1d=double(V1dig)*Vmax/(2^15);%Double pour éviter le dépassement de capacité sur MATLAB
 V2d=double(V2dig)*Vmax/(2^15);
 
-figure (4);
+nexttile;
 plot([dataRC(:,1) dataRC(:,1)], [dataRC(:,3) dataRC(:,4)]);
 
-figure (5);
+nexttile;
 plot([t1 t2], [V1d V2d],'-x');
-

@@ -9,7 +9,7 @@ xlabel('time[ms]');
 ylabel('voltage [V]');
 ylim([-0.3 0.3]);
 
-SampleFreq = 1e4; %the sample frequency for all the channels together
+SampleFreq = 1e5; %the sample frequency for all the channels together
                  %how does "scan mode work??"
 
 OutputSmpls = 4000; %the number of output samples you will convert
